@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<data >
+    <variable
+        name="recylerData"
+        type="com.example.samplelivedata.RecylerData" />
+</data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/thumbImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="62dp"
+        tools:srcCompat="@tools:sample/avatars"
+        app:loadImage='@{recylerData.owner.avatar_url}'/>
+
+    <TextView
+        android:id="@+id/nametextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{recylerData.name}'
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/desctextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{recylerData.description ?? "No desc available"}'
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <TextView
+        android:id="@+id/createdtextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{recylerData.created_at}'
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="405dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
